@@ -1,0 +1,53 @@
+{
+  "name": "simple-projector",
+  "version": "1.0.0",
+  "description": "https://user-images.githubusercontent.com/46679203/157527081-1464b65c-ec0f-4afa-80c9-da77c5af60e7.mp4",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jobserver/simple-projector.git"
+  },
+  "keywords": [],
+  "build": {
+    "appId": "br.com.proclamandocristo",
+    "asar": true,
+    "extraFiles": [
+      "arquivos"
+    ],
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    }
+  },
+  "author": "Joabe Nascimento <joabe.santos@gmail.com>",
+  "email": "joabe.santos@gmail.com",
+  "homepage": "https://github.com/jobserver/simple-projector#readme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jobserver/simple-projector/issues"
+  },
+  "devDependencies": {
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "font-list": "^1.2.12",
+    "fs": "0.0.1-security",
+    "knex": "^0.21.17",
+    "sqlite3": "^5.0.1",
+    "utf8": "^3.0.0"
+  }
+}

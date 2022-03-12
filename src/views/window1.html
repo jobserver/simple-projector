@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="../components/background.vue.js"></script>
+  <script src="../components/fontformat.vue.js"></script>
+  <script src="../components/playlist.vue.js"></script>
+  <script src="../components/biblia.vue.js"></script>
+  <script src="../components/musicas.vue.js"></script>
+  <meta charset="UTF-8">
+  <title>Igreja Batista Manápolis</title>
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <v-container fluid>
+          <v-row dense>
+            <v-col cols="4">
+              <Fontformat />
+            </v-col>
+
+            <v-col cols="4">
+              <Playlist />            
+            </v-col>
+
+            <v-col cols="4">
+              <Background />              
+            </v-col>
+          </v-row>
+          
+          <v-row>
+            <v-col cols="6">
+              <Musica ref="musicas" />
+            </v-col>
+
+            <v-col cols="6">
+              <Biblia ref="biblia" />
+              <!-- <v-btn color="primary" id="loadnewwindow">new window</v-btn> -->
+            </v-col>
+
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    require('./window1.js')
+  </script>
+</body>
+
+</html>

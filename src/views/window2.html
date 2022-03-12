@@ -1,0 +1,51 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">        
+      <title>Projeção</title>
+      <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+  <body>
+      <div id="app">    
+        <v-app  :style="
+        {backgroundColor:configuracao.backGroundColor,
+          backgroundImage:`url(${configuracao.backgroundImage})`,
+          backgroundSize: configuracao.backgroundSize,
+          backgroundRepeat:'no-repeat',
+          backgroundPosition:'center'
+        }">
+      <v-main>
+        <v-container fluid>         
+            <div v-if="configuracao.color"            
+         :style="{
+         textShadow:`0 0 ${configuracao.shadow[0].size}px ${configuracao.shadow[0].color}, 0 0 ${configuracao.shadow[1].size}px ${configuracao.shadow[1].color}`,
+         color:configuracao.color,
+         fontWeight:configuracao.textFormat.includes(1) ? 'bold':100,
+         fontStyle:configuracao.textFormat.includes(2) ? 'italic':'normal',
+         textDecoration:configuracao.textFormat.includes(3) ? 'underline':'',
+         textTransform:configuracao.textFormat.includes(4) ? 'uppercase':'',
+         fontFamily:configuracao.fontFamily,
+         fontSize:configuracao.fontSize+'px',
+         letterSpacing:configuracao.letterSpacing+'px',
+         lineHeight:configuracao.lineHeight+'px',
+         textAlign:configuracao.align}" 
+         v-html="configuracao.texto">
+        </div>
+          </v-container>
+          </v-main>
+          </v-app>               
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        require('./window2.js')
+      </script>
+      <style>
+        *{
+          overflow: hidden !important;
+        }
+      </style>
+  </body>
+  </html>
